@@ -2,30 +2,27 @@
   <div>
    <div class="form-group">
      <label for="prompt">Je vraag:</label>
-     <input type="text" id="prompt" class="form-control" v-model="prompt">
+     <input type="text" class="form-control" v-model="prompt">
       <button class="btn btn-primary" @click="callAPI">Submit!</button> 
  </div>
      <div>
    Antwoord van openAI: <p>{{ data }}</p>
    </div>
   <div>
- <p>Prompt:    {{ prompt }}</p>
- <p>api url {{  apiurl  }}</p>
+ <p>TEST Prompt:    {{ prompt }}</p>
+ <p>TEST api url {{  apiurl  }}</p>
   </div></div>
  </template>
  <script async setup>
-import { ref, reactive } from "vue"
+import { ref} from "vue"
 
-    const data = ref(null);
-    const prompt =  ('')
+    const data = ref(null)
 
-    const nodeurl = "http://localhost:3000/openai?prompt="
-    const apiurl = nodeurl + prompt
+    const prompt = ref("the planets")
+    const apiurl = "http://localhost:3000/openai?prompt=" + prompt.value
 
     async function callAPI() {
-    
- 
-    await new Promise((r) => setTimeout(r, 2000))
+      await new Promise((r) => setTimeout(r, 2000))
 
     try {
       const res = await fetch(apiurl)
