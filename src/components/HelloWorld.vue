@@ -14,12 +14,19 @@
  
    </div></div>
  </template>
- <script setup>  // https://github.com/dizid/openAItest/blob/master/src/components/HelloWorld.vue
+ <script setup>  
+  // Code is here: https://github.com/dizid/openAItest/blob/master/src/components/HelloWorld.vue
+  // Site runs here: https://jazzy-pixie-d52103.netlify.app/
+
 import { ref} from "vue"
     const data = ref(null)
    const prompt = ref('tell me about the sun')  // App works with this default value. 
   // const apiurl = "http://localhost:3000/openai?prompt=" + prompt  // ERROR: not reactive anymore
-  const apiurl = "https://439c-87-209-198-112.ngrok.io/openai?prompt=" + prompt
+
+// The problem: if i type a query into the textbox, Vue need to create an URL for the API call.
+// But: the 'promt' variable stops being reactive
+
+  const apiurl = "https://439c-87-209-198-112.ngrok.io/openai?prompt=" + prompt  // Runs on my localhost through NGROK.com
 
     async function callAPI() {
       await new Promise((r) => setTimeout(r, 2000))
