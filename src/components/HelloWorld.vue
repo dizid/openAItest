@@ -26,7 +26,7 @@ import { ref} from "vue"
 // The problem: if i type a query into the textbox, Vue need to create an URL for the API call.
 // But: the 'promt' variable stops being reactive
 
-  const apiurl = "https://439c-87-209-198-112.ngrok.io/openai?prompt=" + prompt  // Runs on my localhost through NGROK.com
+  const apiurl = "https://439c-87-209-198-112.ngrok.io/openai?prompt=" + prompt.value  // Runs on my localhost through NGROK.com
 
     async function callAPI() {
       await new Promise((r) => setTimeout(r, 2000))
