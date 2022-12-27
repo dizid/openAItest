@@ -11,9 +11,10 @@ import HelloWorld from './components/HelloWorld.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <Suspense>
+ <!--  <Suspense>
     <HelloWorld/>
-  </Suspense>
+  </Suspense> -->
+  <HelloWorld/>
 </template>
 
 <style scoped>
