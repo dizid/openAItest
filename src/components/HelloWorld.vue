@@ -1,10 +1,13 @@
 <template>
- <div><label>Type you query:</label>
+ <div>
+  <label>Type you query:</label>
       <input type="text" class="form-control" v-model="query">
-      <p>url with the users query as url variable  {{ url }}</p></div>   <!-- Problem: not reactive -->
+      <p>user typed: query:  {{ query }}</p>
+       <p>url with the users query as url variable  {{ url }}</p> 
+   </div>  
 </template>
 <script setup>  
 import { ref} from "vue"
-const query = ref('default value')   
-const url = "https://80fb-31-187-152-178.ngrok.io/openai?prompt=" + query.value
+const query = ref('defaultvalue')
+const url = "https://80fb-31-187-152-178.ngrok.io/openai?q=" + query.value
 </script>

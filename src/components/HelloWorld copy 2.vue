@@ -18,8 +18,7 @@
  <script setup>  
   // Code is here: https://github.com/dizid/openAItest/blob/master/src/components/HelloWorld.vue
   // Site runs here: https://jazzy-pixie-d52103.netlify.app/
-  // Node.js API relay server runs here: https://80fb-31-187-152-178.ngrok.io/openai?prompt=test tell me about the sun  (takes a few seconds to finish request)
-
+  
 import { ref, watch} from "vue"
     const data = ref(null)
    const prompt = ref('tell me about the sun')  // App works with this default value. 
