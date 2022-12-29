@@ -3,7 +3,8 @@ import { ref, computed } from "vue";
 const data = ref(null);
 const query = ref("vertel me over jezelf");
 const apiurl = computed(() => {
-  return "http://localhost:3000/openai?q=" + query.value;
+  // return "http://localhost:3000/openai?q=" + query.value;
+  return "https://d5d1-87-209-198-112.ngrok.io/openai?q=" + query.value;
 });
 
 async function callAPI() {
